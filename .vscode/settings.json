@@ -1,0 +1,28 @@
+{
+  "files.associations": {
+    "init.h": "c",
+    "stdbool.h": "c",
+    "regex": "c",
+    "sstream": "c",
+    "strstream": "c",
+    "array": "c",
+    "future": "c",
+    "istream": "c",
+    "memory": "c",
+    "tuple": "c",
+    "type_traits": "c",
+    "utility": "c",
+    "variant": "c",
+    "xlocmes": "c",
+    "xlocmon": "c",
+    "xlocnum": "c",
+    "xloctime": "c",
+    "locale": "c",
+    "thread": "c",
+    "xlocale": "c",
+    "string": "c",
+    "cstdint": "c",
+    "filesystem": "c",
+    "xstring": "c"
+  }
+}
