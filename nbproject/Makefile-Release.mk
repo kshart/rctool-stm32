@@ -49,6 +49,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o \
 	${OBJECTDIR}/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o \
 	${OBJECTDIR}/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o \
+	${OBJECTDIR}/src/core/PackageBuffer.o \
+	${OBJECTDIR}/src/core/PackageManager.o \
 	${OBJECTDIR}/src/core/gpio.o \
 	${OBJECTDIR}/src/core/stm32f1xx_hal_msp.o \
 	${OBJECTDIR}/src/core/stm32f1xx_it.o \
@@ -153,6 +155,16 @@ ${OBJECTDIR}/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o: Drivers/STM3
 	${MKDIR} -p ${OBJECTDIR}/Drivers/STM32F1xx_HAL_Driver/Src
 	${RM} "$@.d"
 	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c
+
+${OBJECTDIR}/src/core/PackageBuffer.o: src/core/PackageBuffer.cpp
+	${MKDIR} -p ${OBJECTDIR}/src/core
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/core/PackageBuffer.o src/core/PackageBuffer.cpp
+
+${OBJECTDIR}/src/core/PackageManager.o: src/core/PackageManager.cpp
+	${MKDIR} -p ${OBJECTDIR}/src/core
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/core/PackageManager.o src/core/PackageManager.cpp
 
 ${OBJECTDIR}/src/core/gpio.o: src/core/gpio.c
 	${MKDIR} -p ${OBJECTDIR}/src/core

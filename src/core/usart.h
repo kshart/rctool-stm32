@@ -25,8 +25,8 @@
  extern "C" {
 #endif
 
-UART_HandleTypeDef huart1;
-UART_HandleTypeDef huart2;
+extern UART_HandleTypeDef huart1;
+extern UART_HandleTypeDef huart2;
 
 void MX_USART1_UART_Init();
 void MX_USART2_UART_Init();

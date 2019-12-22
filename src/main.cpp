@@ -18,10 +18,11 @@
   */
 
 #include "main.h"
+#include <stm32f1xx_hal_gpio.h>
 #include "core/usart.h"
 #include "core/gpio.h"
+#include "core/PackageManager.h"
 #include "hc05/hc05.h"
-#include <stdbool.h>
 
 #include <cstring>
 #include <stdbool.h>
@@ -88,46 +89,8 @@ int main(void)
   }
   MX_USART2_UART_Init2();
   HAL_Delay(100);
-
-  while (1)
-  {
-    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, GPIO_PIN_RESET);
-    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_9, GPIO_PIN_SET);
-
-    {
-      char* hc05Hello = "AT\r\n";
-      char* nothing = "nothing\r\n";
-      HAL_UART_Transmit(&huart2, (uint8_t*)hc05Hello, strlen(hc05Hello), 0xFFFF);
-
-      HAL_StatusTypeDef result = HAL_UART_Receive(&huart2, (uint8_t*)buffer, 64, 100);
-      if (result == HAL_OK || result == HAL_TIMEOUT) {
-        size_t stringLength = strlen(buffer);
-        if (stringLength > 0) {
-          HAL_UART_Transmit(&huart1, (uint8_t*)buffer, strlen(buffer), 0xFFFF);
-        } else {
-          HAL_UART_Transmit(&huart1, (uint8_t*)nothing, strlen(nothing), 0xFFFF);
-        }
-      }
-    }
-
-    // HAL_StatusTypeDef result = HAL_UART_Receive(&huart1, (uint8_t*)buffer, 64, 9000);
-    // if (result == HAL_OK || result == HAL_TIMEOUT) {
-    //   size_t stringLength = strlen(buffer);
-    //   if (stringLength > 0) {
-    //     HAL_UART_Transmit(&huart1, (uint8_t*)buffer, strlen(buffer), 0xFFFF);
-    //   }
-    // }
-    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, GPIO_PIN_SET);
-    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_9, GPIO_PIN_RESET);
-    for (size_t i = 0; i < 64; ++i) {
-      buffer[i] = 0;
-    }
-    HAL_Delay(10);
-    /* USER CODE END WHILE */
-
-    /* USER CODE BEGIN 3 */
-  }
-  /* USER CODE END 3 */
+  PackageManager packageManager(&huart2);
+  packageManager.listen();
 }
 
 /**

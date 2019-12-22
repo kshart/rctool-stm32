@@ -6,6 +6,8 @@
                    projectFiles="true">
       <logicalFolder name="src" displayName="src" projectFiles="true">
         <logicalFolder name="core" displayName="core" projectFiles="true">
+          <itemPath>src/core/PackageBuffer.cpp</itemPath>
+          <itemPath>src/core/PackageManager.cpp</itemPath>
           <itemPath>src/core/gpio.c</itemPath>
           <itemPath>startup_stm32f103xb.s</itemPath>
           <itemPath>src/core/stm32f1xx_hal_msp.c</itemPath>
@@ -41,6 +43,8 @@
                    projectFiles="true">
       <logicalFolder name="src" displayName="src" projectFiles="true">
         <logicalFolder name="core" displayName="core" projectFiles="true">
+          <itemPath>src/core/PackageBuffer.h</itemPath>
+          <itemPath>src/core/PackageManager.h</itemPath>
           <itemPath>src/core/gpio.h</itemPath>
           <itemPath>src/core/init.h</itemPath>
           <itemPath>src/core/stm32f1xx_hal_conf.h</itemPath>
@@ -198,6 +202,14 @@
             tool="0"
             flavor2="0">
       </item>
+      <item path="src/core/PackageBuffer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/core/PackageBuffer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/core/PackageManager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/core/PackageManager.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/core/gpio.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="src/core/gpio.h" ex="false" tool="3" flavor2="0">
@@ -316,6 +328,14 @@
             ex="false"
             tool="0"
             flavor2="0">
+      </item>
+      <item path="src/core/PackageBuffer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/core/PackageBuffer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/core/PackageManager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/core/PackageManager.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/core/gpio.c" ex="false" tool="0" flavor2="0">
       </item>

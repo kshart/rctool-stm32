@@ -10,7 +10,9 @@
             <file>file:/C:/STM32%20Tool/rctool-stm32/src/main.cpp</file>
             <file>file:/C:/STM32%20Tool/rctool-stm32/src/hc05/hc05.c</file>
             <file>file:/C:/STM32%20Tool/rctool-stm32/src/core/usart.h</file>
+            <file>file:/C:/STM32%20Tool/rctool-stm32/src/core/PackageManager.cpp</file>
             <file>file:/C:/STM32%20Tool/rctool-stm32/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c</file>
+            <file>file:/C:/STM32%20Tool/rctool-stm32/src/core/PackageManager.h</file>
             <file>file:/C:/STM32%20Tool/rctool-stm32/src/core/usart.c</file>
         </group>
     </open-files>
