@@ -22,7 +22,7 @@ build/Debug/MinGW-Windows/src/core/PackageManager.o: \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h src/core/usart.h \
- src/core/PackageBuffer.h
+ src/core/PackageBuffer.h src/core/tim.h
 
 src/core/PackageManager.h:
 
@@ -79,3 +79,5 @@ Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
 src/core/usart.h:
 
 src/core/PackageBuffer.h:
+
+src/core/tim.h:

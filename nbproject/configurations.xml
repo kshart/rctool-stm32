@@ -13,6 +13,7 @@
           <itemPath>src/core/stm32f1xx_hal_msp.c</itemPath>
           <itemPath>src/core/stm32f1xx_it.c</itemPath>
           <itemPath>src/core/system_stm32f1xx.c</itemPath>
+          <itemPath>src/core/tim.c</itemPath>
           <itemPath>src/core/usart.c</itemPath>
         </logicalFolder>
         <logicalFolder name="hc05" displayName="hc05" projectFiles="true">
@@ -49,6 +50,7 @@
           <itemPath>src/core/init.h</itemPath>
           <itemPath>src/core/stm32f1xx_hal_conf.h</itemPath>
           <itemPath>src/core/stm32f1xx_it.h</itemPath>
+          <itemPath>src/core/tim.h</itemPath>
           <itemPath>src/core/usart.h</itemPath>
         </logicalFolder>
         <itemPath>src/main.h</itemPath>
@@ -129,7 +131,7 @@
             <linkerLibLibItem>nosys</linkerLibLibItem>
             <linkerLibLibItem>stdc++</linkerLibLibItem>
           </linkerLibItems>
-          <commandLine>-TSTM32F103RBTx_FLASH.ld -specs=nano.specs -mcpu=cortex-m3 -mthumb -Wl,--gc-sections -specs=nosys.specs</commandLine>
+          <commandLine>-TSTM32F103RBTx_FLASH.ld -specs=nano.specs -mcpu=cortex-m3 -mthumb -Wl,--gc-sections -specs=nosys.specs -u _printf_float</commandLine>
         </linkerTool>
       </compileType>
       <item path="Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c"
@@ -225,6 +227,10 @@
       <item path="src/core/stm32f1xx_it.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/core/system_stm32f1xx.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="src/core/tim.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="src/core/tim.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/core/usart.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -352,6 +358,10 @@
       <item path="src/core/stm32f1xx_it.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/core/system_stm32f1xx.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="src/core/tim.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="src/core/tim.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/core/usart.c" ex="false" tool="0" flavor2="0">
       </item>

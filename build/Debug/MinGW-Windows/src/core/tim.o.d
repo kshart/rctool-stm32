@@ -1,5 +1,5 @@
-build/Debug/MinGW-Windows/src/main.o: src/main.cpp src/main.h \
- Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
+build/Debug/MinGW-Windows/src/core/tim.o: src/core/tim.c src/core/tim.h \
+ src/core/../main.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
  src/core/stm32f1xx_hal_conf.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h \
@@ -20,11 +20,11 @@ build/Debug/MinGW-Windows/src/main.o: src/main.cpp src/main.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
- Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h src/core/usart.h \
- src/core/../main.h src/core/tim.h src/core/gpio.h src/core/usart.h \
- src/core/PackageManager.h src/core/PackageBuffer.h src/hc05/hc05.h
+ Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h src/core/usart.h
 
-src/main.h:
+src/core/tim.h:
+
+src/core/../main.h:
 
 Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 
@@ -75,17 +75,3 @@ Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h:
 Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
 
 src/core/usart.h:
-
-src/core/../main.h:
-
-src/core/tim.h:
-
-src/core/gpio.h:
-
-src/core/usart.h:
-
-src/core/PackageManager.h:
-
-src/core/PackageBuffer.h:
-
-src/hc05/hc05.h:

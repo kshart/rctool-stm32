@@ -14,6 +14,7 @@ protected:
   PackageBuffer buffer;
   PackageBuffer pack;
   char lastChar = 0;
+  size_t totalPacks = 0;
 public:
   PackageManager(UART_HandleTypeDef* huart);
 

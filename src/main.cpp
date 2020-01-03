@@ -19,8 +19,9 @@
 
 #include "main.h"
 #include <stm32f1xx_hal_gpio.h>
-#include "core/usart.h"
+#include "core/tim.h"
 #include "core/gpio.h"
+#include "core/usart.h"
 #include "core/PackageManager.h"
 #include "hc05/hc05.h"
 
@@ -60,9 +61,14 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_TIM3_Init();
   MX_USART1_UART_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
+  HAL_TIM_Base_Start_IT(&htim3);
+  HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
+  uint32_t pulse = 1999; // 1000
+
   char* welcomeMessage = "USART Transmit\r\n";
   char buffer[64] = {0};
   HAL_UART_Transmit(&huart1, (uint8_t*)welcomeMessage, strlen(welcomeMessage), 0xFFFF);
@@ -89,6 +95,7 @@ int main(void)
   }
   MX_USART2_UART_Init2();
   HAL_Delay(100);
+  // htim3.Instance->CCR1 = pulse;
   PackageManager packageManager(&huart2);
   packageManager.listen();
 }

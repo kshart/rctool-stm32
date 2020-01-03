@@ -55,6 +55,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/core/stm32f1xx_hal_msp.o \
 	${OBJECTDIR}/src/core/stm32f1xx_it.o \
 	${OBJECTDIR}/src/core/system_stm32f1xx.o \
+	${OBJECTDIR}/src/core/tim.o \
 	${OBJECTDIR}/src/core/usart.o \
 	${OBJECTDIR}/src/hc05/hc05.o \
 	${OBJECTDIR}/src/hc05/package.o \
@@ -185,6 +186,11 @@ ${OBJECTDIR}/src/core/system_stm32f1xx.o: src/core/system_stm32f1xx.c
 	${MKDIR} -p ${OBJECTDIR}/src/core
 	${RM} "$@.d"
 	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/core/system_stm32f1xx.o src/core/system_stm32f1xx.c
+
+${OBJECTDIR}/src/core/tim.o: src/core/tim.c
+	${MKDIR} -p ${OBJECTDIR}/src/core
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/core/tim.o src/core/tim.c
 
 ${OBJECTDIR}/src/core/usart.o: src/core/usart.c
 	${MKDIR} -p ${OBJECTDIR}/src/core
