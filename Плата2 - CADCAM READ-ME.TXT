@@ -1,0 +1,63 @@
+LABCENTER PROTEUS TOOL INFORMATION FILE
+=======================================
+
+In case of difficulty, please e-mail support@labcenter.co.uk
+
+Tool set up for Proteus layout 'Плата.LYT'.
+CADCAM generated at 1:07:35 on 7 января 2020 г..
+
+File List
+---------
+Top Copper              : Плата2 - CADCAM Top Copper.TXT
+Bottom Copper           : Плата2 - CADCAM Bottom Copper.TXT
+Top Silk Screen         : Плата2 - CADCAM Top Silk Screen.TXT
+Mechanical 1            : Плата2 - CADCAM Mechanical 1.TXT
+Drill                   : Плата2 - CADCAM Drill.TXT
+
+Photoplotter Setup
+------------------
+Format: RS274X, ASCII, 2.4, imperial, absolute, eob=*, LZO
+Notes:  D=Diameter, S=Side, W=Width, H=Height, C=Chamfer
+
+D10	CIRCLE  D=0.25mm                                                          DRAW
+D11	CIRCLE  D=1.02mm                                                          DRAW
+D12	CIRCLE  D=0.51mm                                                          DRAW
+D13	CIRCLE  D=1.52mm                                                          FLASH
+D14	CIRCLE  D=2.03mm                                                          FLASH
+D15	CIRCLE  D=0.76mm                                                          FLASH
+D16	CIRCLE  D=0.0635mm                                                        DRAW
+D17	RECT    W=1.02mm              H=1.52mm                                    FLASH
+D18	RECT    W=5mm                 H=13mm                                      FLASH
+D19	RECT    W=1.2mm               H=2.5mm                                     FLASH
+D70	RECT    W=2.5mm               H=1.2mm                                     FLASH
+D71	CIRCLE  D=3.05mm                                                          FLASH
+D20	RECT    W=1.52mm              H=1.02mm                                    FLASH
+D21	SQUARE  S=0.89mm                                                          FLASH
+D22	RECT    W=0.3mm               H=1.6mm                                     FLASH
+D23	RECT    W=1.6mm               H=0.3mm                                     FLASH
+D24	RECT    W=0.76mm              H=1.78mm                                    FLASH
+D25	CIRCLE  D=0.06mm                                                          DRAW
+D26	CIRCLE  D=1.52mm                                                          DRAW
+D27	CIRCLE  D=0.76mm                                                          DRAW
+D28	RECT    W=1.65mm              H=3.56mm                                    FLASH
+D29	RECT    W=2mm                 H=1.9mm                                     FLASH
+D72	RECT    W=1.27mm              H=3.05mm                                    FLASH
+D73	RECT    W=11.43mm             H=8.89mm                                    FLASH
+D30	RECT    W=2.03mm              H=1.52mm                                    FLASH
+D31	RECT    W=2.03mm              H=3.81mm                                    FLASH
+D32	CIRCLE  D=0.2mm                                                           DRAW
+
+NC Drill Setup
+--------------
+Format: ASCII, 2.4, imperial, absolute, eob=<CR><LF>, no zero suppression.
+Notes:  Tool sizes are diameters. Layer sets are in brackets - 0=TOP, 15=BOTTOM, 1-14=INNER.
+
+T01	0.51mm (0-15)
+T02	0.38mm (0-15)
+T03	0.76mm (0-15)
+T04	1.78mm (0-15)
+T05	1.02mm (0-15)
+T06	1.52mm (0-15)
+
+
+[END OF FILE]

@@ -18,6 +18,7 @@ void clearBuffer(char *buffer, size_t size) {
 bool hc05Init(UART_HandleTypeDef *huart) {
   bool stateOk = false;
   char *helloMessage = "AT\r\n";
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_14, GPIO_PIN_SET);
   while (!stateOk) {
     HAL_UART_Transmit(huart, helloMessage, strlen(helloMessage), 0xFFFF);
 
@@ -26,10 +27,15 @@ bool hc05Init(UART_HandleTypeDef *huart) {
       size_t stringLength = strlen(buffer);
       if (stringLength > 0) {
         stateOk = true;
+      } else {
+        HAL_GPIO_WritePin(GPIOB, GPIO_PIN_14, GPIO_PIN_SET);
+        HAL_Delay(500);
+        HAL_GPIO_WritePin(GPIOB, GPIO_PIN_14, GPIO_PIN_RESET);
       }
     }
     clearBuffer(buffer, sizeof(buffer));
   }
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_14, GPIO_PIN_SET);
 
   {
     char *roleMessage = "AT+ROLE=0\r\n";

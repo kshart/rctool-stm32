@@ -4,43 +4,51 @@
 (Type: G-code from Excellon)
 (Units: MM)
 
-(Created on Sunday, 29 December 2019 at 13:31)
+(Created on Wednesday, 08 January 2020 at 14:06)
 
-(Feedrate: 20.0 mm/min)
+(Feedrate: 5.0 mm/min)
 (Feedrate rapids 800.0009 mm/min)
 
 (Z_Cut: -2.5 mm)
-(Z_Move: 1.999 mm)
+(Z_Move: 1.0 mm)
 (Z Toolchange: 12.7 mm)
 (X,Y Toolchange: 0.0000, 0.0000 mm)
 (Z Start: None mm)
-(Z End: 12.0 mm)
+(Z End: 12.7 mm)
 (Steps per circle: 128)
 (Postprocessor Excellon: default)
 
-(X range:    2.9896 ...   49.3801  mm)
-(Y range:  -33.5077 ...   -2.9896  mm)
+(X range:  -53.2519 ...    3.0498  mm)
+(Y range:  -41.7609 ...    3.6518  mm)
 
-(Spindle Speed: None RPM)
+(Spindle Speed: 500.0 RPM)
 
 G21
 G90
 G94
 
-G01 F20.00
-G00 Z1.9990
+G01 F5.00
+G00 Z1.0000
 
-M03
-G00 X45.9994 Y-12.5374
+M03 S500.0
+G00 X-32.9979 Y1.0000
 G01 Z-2.5000
 G01 Z0
-G00 Z1.9990
-G00 X45.9994 Y-16.4998
+G00 Z1.0000
+G00 X1.0000 Y1.0000
 G01 Z-2.5000
 G01 Z0
-G00 Z1.9990
+G00 Z1.0000
+G00 X1.0000 Y-40.9989
+G01 Z-2.5000
+G01 Z0
+G00 Z1.0000
+G00 X-32.9979 Y-40.9989
+G01 Z-2.5000
+G01 Z0
+G00 Z1.0000
 M05
-G00 Z12.00
+G00 Z12.70
 G00 X0.0 Y0.0
 
 M02

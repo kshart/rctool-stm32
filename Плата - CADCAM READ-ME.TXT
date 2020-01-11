@@ -4,35 +4,30 @@ LABCENTER PROTEUS TOOL INFORMATION FILE
 In case of difficulty, please e-mail support@labcenter.co.uk
 
 Tool set up for Proteus layout 'Плата.LYT'.
-CADCAM generated at 16:50:47 on 29 декабря 2019 г..
+CADCAM generated at 13:20:05 on 8 января 2020 г..
 
 File List
 ---------
-Bottom Copper           : Плата - CADCAM Bottom Copper.TXT
 Mechanical 1            : Плата - CADCAM Mechanical 1.TXT
+Drill                   : Плата - CADCAM Drill.TXT
 
 Photoplotter Setup
 ------------------
 Format: RS274X, ASCII, 2.4, imperial, absolute, eob=*, LZO
 Notes:  D=Diameter, S=Side, W=Width, H=Height, C=Chamfer
 
-D10	CIRCLE  D=1.02mm                                                          DRAW
-D11	CIRCLE  D=1.52mm                                                          DRAW
-D12	CIRCLE  D=0.51mm                                                          DRAW
-D13	CIRCLE  D=2.03mm                                                          FLASH
-D14	CIRCLE  D=0.0635mm                                                        DRAW
-D15	CIRCLE  D=0.25mm                                                          DRAW
-D16	RECT    W=2.03mm              H=2.54mm                                    FLASH
-D17	RECT    W=13mm                H=5mm                                       FLASH
-D18	RECT    W=3.05mm              H=1.27mm                                    FLASH
-D19	RECT    W=8.89mm              H=11.43mm                                   FLASH
-D70	CIRCLE  D=3.05mm                                                          FLASH
 
 NC Drill Setup
 --------------
 Format: ASCII, 2.4, imperial, absolute, eob=<CR><LF>, no zero suppression.
 Notes:  Tool sizes are diameters. Layer sets are in brackets - 0=TOP, 15=BOTTOM, 1-14=INNER.
 
+T01	0.51mm (0-15)
+T02	0.38mm (0-15)
+T03	0.76mm (0-15)
+T04	1.78mm (0-15)
+T05	1.02mm (0-15)
+T06	1.52mm (0-15)
 
 
 [END OF FILE]
