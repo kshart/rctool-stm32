@@ -20,11 +20,8 @@ extern "C" {
 
 #include "../main.h"
 
-TIM_HandleTypeDef htim3;
-
 void SystemClock_Config();
 void MX_GPIO_Init();
-TIM_HandleTypeDef* MX_TIM3_Init();
 
 #ifdef __cplusplus
 }

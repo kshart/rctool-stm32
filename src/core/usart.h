@@ -28,9 +28,8 @@
 extern UART_HandleTypeDef huart1;
 extern UART_HandleTypeDef huart2;
 
-void MX_USART1_UART_Init();
+void MX_USART1_UART_Init(size_t rate);
 void MX_USART1_UART_Init2();
-void MX_USART2_UART_Init();
 
 #ifdef __cplusplus
 }

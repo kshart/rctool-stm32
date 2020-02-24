@@ -60,7 +60,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/hc05/hc05.o \
 	${OBJECTDIR}/src/hc05/package.o \
 	${OBJECTDIR}/src/main.o \
-	${OBJECTDIR}/startup_stm32f103x6.o
+	${OBJECTDIR}/startup_stm32f103xb.o
 
 
 # C Compiler Flags
@@ -212,9 +212,9 @@ ${OBJECTDIR}/src/main.o: src/main.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/main.o src/main.cpp
 
-${OBJECTDIR}/startup_stm32f103x6.o: startup_stm32f103x6.s
+${OBJECTDIR}/startup_stm32f103xb.o: startup_stm32f103xb.s
 	${MKDIR} -p ${OBJECTDIR}
-	$(AS) $(ASFLAGS) -o ${OBJECTDIR}/startup_stm32f103x6.o startup_stm32f103x6.s
+	$(AS) $(ASFLAGS) -o ${OBJECTDIR}/startup_stm32f103xb.o startup_stm32f103xb.s
 
 # Subprojects
 .build-subprojects:

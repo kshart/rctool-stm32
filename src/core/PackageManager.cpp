@@ -32,8 +32,8 @@ bool PackageManager::dispatchPackage() {
         // HAL_UART_Transmit(&huart2, (uint8_t*)failMessage, strlen(failMessage), 0xFFFF);
         return false;
       }
-      htim3.Instance->CCR1 = 800 + static_cast<int>(1350.0 * y);
-      htim1.Instance->CCR1 = 800 + static_cast<int>(1350.0 * x);
+      htim2.Instance->CCR3 = 800 + static_cast<int>(1350.0 * y);
+      htim2.Instance->CCR4 = 800 + static_cast<int>(1350.0 * x);
       return true;
   }
   return false;
