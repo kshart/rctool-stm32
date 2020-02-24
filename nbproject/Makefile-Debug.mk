@@ -196,10 +196,10 @@ ${OBJECTDIR}/src/core/usart.o: src/core/usart.c
 	${RM} "$@.d"
 	$(COMPILE.c) -g -DSTM32F103xB -DUSE_HAL_DRIVER -IDrivers/STM32F1xx_HAL_Driver/Inc -IDrivers/STM32F1xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32F1xx/Include -IDrivers/CMSIS/Include -Isrc -Isrc/core -std=c11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/core/usart.o src/core/usart.c
 
-${OBJECTDIR}/src/hc05/hc05.o: src/hc05/hc05.c
+${OBJECTDIR}/src/hc05/hc05.o: src/hc05/hc05.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/hc05
 	${RM} "$@.d"
-	$(COMPILE.c) -g -DSTM32F103xB -DUSE_HAL_DRIVER -IDrivers/STM32F1xx_HAL_Driver/Inc -IDrivers/STM32F1xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32F1xx/Include -IDrivers/CMSIS/Include -Isrc -Isrc/core -std=c11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/hc05/hc05.o src/hc05/hc05.c
+	$(COMPILE.cc) -g -DSTM32F103xB -DUSE_HAL_DRIVER -IDrivers/STM32F1xx_HAL_Driver/Inc -IDrivers/STM32F1xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32F1xx/Include -IDrivers/CMSIS/Include -Isrc -Isrc/core -include stdint.h -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/hc05/hc05.o src/hc05/hc05.cpp
 
 ${OBJECTDIR}/src/main.o: src/main.cpp
 	${MKDIR} -p ${OBJECTDIR}/src

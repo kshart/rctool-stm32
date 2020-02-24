@@ -197,10 +197,10 @@ ${OBJECTDIR}/src/core/usart.o: src/core/usart.c
 	${RM} "$@.d"
 	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/core/usart.o src/core/usart.c
 
-${OBJECTDIR}/src/hc05/hc05.o: src/hc05/hc05.c
+${OBJECTDIR}/src/hc05/hc05.o: src/hc05/hc05.cpp
 	${MKDIR} -p ${OBJECTDIR}/src/hc05
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/hc05/hc05.o src/hc05/hc05.c
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/hc05/hc05.o src/hc05/hc05.cpp
 
 ${OBJECTDIR}/src/hc05/package.o: src/hc05/package.c
 	${MKDIR} -p ${OBJECTDIR}/src/hc05

@@ -1,4 +1,4 @@
-#include "usart.h"
+#include "hc05.h"
 #include "gpio.h"
 #include <string.h>
 #include <stdbool.h>
@@ -15,12 +15,12 @@ void clearBuffer(char *buffer, size_t size) {
  * Запуск Bluetooth модуля.
  * @retval boolean
  */
-bool hc05Init(UART_HandleTypeDef *huart) {
+bool hc05Init(UART_HandleTypeDef* huart, PinGPIO& ledPin) {
   bool stateOk = false;
   char *helloMessage = "AT\r\n";
-  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET);
+  ledPin.setState(false);
   while (!stateOk) {
-    HAL_UART_Transmit(huart, helloMessage, strlen(helloMessage), 0xFFFF);
+    HAL_UART_Transmit(huart, (uint8_t*)helloMessage, strlen(helloMessage), 0xFFFF);
 
     HAL_StatusTypeDef result = HAL_UART_Receive(huart, (uint8_t*)buffer, 64, 500);
     if (result == HAL_OK || result == HAL_TIMEOUT) {
@@ -28,18 +28,18 @@ bool hc05Init(UART_HandleTypeDef *huart) {
       if (stringLength > 0) {
         stateOk = true;
       } else {
-        HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET);
+        ledPin.setState(false);
         HAL_Delay(100);
-        HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET);
+        ledPin.setState(true);
       }
     }
     clearBuffer(buffer, sizeof(buffer));
   }
-  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET);
+  ledPin.setState(false);
 
   {
     char *roleMessage = "AT+ROLE=0\r\n";
-    HAL_UART_Transmit(huart, roleMessage, strlen(roleMessage), 0xFFFF);
+    HAL_UART_Transmit(huart, (uint8_t*)roleMessage, strlen(roleMessage), 0xFFFF);
     HAL_StatusTypeDef result = HAL_UART_Receive(huart, (uint8_t*)buffer, 64, 500);
     if (result == HAL_OK || result == HAL_TIMEOUT) {
       size_t stringLength = strlen(buffer);
@@ -51,7 +51,7 @@ bool hc05Init(UART_HandleTypeDef *huart) {
   }
   {
     char *initMessage = "AT+UART=921600,0,0\r\n";
-    HAL_UART_Transmit(huart, initMessage, strlen(initMessage), 0xFFFF);
+    HAL_UART_Transmit(huart, (uint8_t*)initMessage, strlen(initMessage), 0xFFFF);
     HAL_StatusTypeDef result = HAL_UART_Receive(huart, (uint8_t*)buffer, 64, 500);
     if (result == HAL_OK || result == HAL_TIMEOUT) {
       size_t stringLength = strlen(buffer);
@@ -63,7 +63,7 @@ bool hc05Init(UART_HandleTypeDef *huart) {
   }
 
   char *resetMessage = "AT+RESET\r\n";
-  HAL_UART_Transmit(huart, resetMessage, strlen(resetMessage), 0xFFFF);
+  HAL_UART_Transmit(huart, (uint8_t*)resetMessage, strlen(resetMessage), 0xFFFF);
   return true;
 }
 

@@ -9,15 +9,8 @@
 #define HC05_H
 
 #include "usart.h"
+#include "PinGPIO.h"
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-bool hc05Init(UART_HandleTypeDef *huart);
-
-#ifdef __cplusplus
-}
-#endif
+bool hc05Init(UART_HandleTypeDef *huart, PinGPIO& ledPin);
 
 #endif /* HC05_H */
